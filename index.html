@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Who</title>
+    <link rel="stylesheet" href="styles.css">
+
+    </head>
+<body>
+    <div id="board"></div>
+
+    <script>
+        const data = {
+            "characters": [
+                {"name": "Amy", "image": "amy.jpg"},
+                {"name": "David", "image": "david.jpg"},
+                {"name": "Leo", "image": "leo.jpg"},
+                {"name": "Gabe", "image": "gabe.jpg"},
+                {"name": "Katie", "image": "katie.jpg"},
+                {"name": "Olivia", "image": "olivia.jpg"},
+                {"name": "Jordan", "image": "jordan.jpg"},
+                {"name": "Carmen", "image": "carmen.jpg"},
+                {"name": "Laura", "image": "laura.jpg"},
+                {"name": "Joe", "image": "joe.jpg"},
+                {"name": "Mike", "image": "mike.jpg"},
+                {"name": "Al", "image": "al.jpg"},
+                {"name": "Daniel", "image": "daniel.jpg"},
+                {"name": "Sophia", "image": "sophia.jpg"},
+                {"name": "Nick", "image": "nick.jpg"},
+                {"name": "Lily", "image": "lily.jpg"},
+                {"name": "Liz", "image": "liz.jpg"},
+                {"name": "Mia", "image": "mia.jpg"},
+                {"name": "Emma", "image": "emma.jpg"},
+                {"name": "Rachel", "image": "rachel.jpg"},
+                {"name": "Ben", "image": "ben.jpg"},
+                {"name": "Eric", "image": "eric.jpg"},
+                {"name": "Farah", "image": "farah.jpg"},
+                {"name": "Sam", "image": "sam.jpg"}
+            ]
+        };
+
+        const board = document.getElementById('board');
+
+        data.characters.forEach(char => {
+            const div = document.createElement('div');
+            div.className = 'character';
+            div.innerHTML = `
+                <img src="images/${char.image}" alt="${char.name}">
+                <div class="name">${char.name}</div>
+            `;
+            div.onclick = () => div.classList.toggle('x-marked');
+            board.appendChild(div);
+        });
+    </script>
+</body>
+</html>
