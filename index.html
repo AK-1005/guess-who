@@ -7,6 +7,9 @@
 
     </head>
 <body>
+    <div id="darkModeContainer">
+    <button id="darkModeToggle">🌙 Dark Mode</button>
+  </div>
     <div id="board"></div>
 
     <script>
@@ -51,6 +54,11 @@
             div.onclick = () => div.classList.toggle('x-marked');
             board.appendChild(div);
         });
+          const toggleBtn = document.getElementById('darkModeToggle');
+
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+  });
     </script>
 </body>
 </html>
